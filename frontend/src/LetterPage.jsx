@@ -33,7 +33,7 @@ export default function LetterPage() {
 
         if (matchedName) {
             setName(matchedName); // Set name first
-            fetch('https://from-pn-with-love-ucie.vercel.app/api/send-code-email', {
+            fetch('https://from-pn-with-love-server.vercel.app/api/send-code-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name: matchedName, code: input })
@@ -58,7 +58,7 @@ export default function LetterPage() {
     const handleSendMessage = async () => {
         if (!message.trim()) return;
 
-        const res = await fetch('https://from-pn-with-love-ucie.vercel.app/api/send-message-email', {
+        const res = await fetch('https://from-pn-with-love-server.vercel.app/api/send-message-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, message }),
